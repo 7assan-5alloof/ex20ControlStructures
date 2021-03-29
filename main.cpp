@@ -32,7 +32,7 @@ int main()
         // Calculate and display total price
         int totalFare = firstTwoKms;
         distance -= 2000;
-        for (int i = distance; (i % 275 == 0) && (i > 0); i - 275) totalFare += farePer275Meters;
+        if (distance > 0) for (int i = distance; i > 0; i -= 275) totalFare += farePer275Meters;
         if ((time == 'N') || (time == 'n')) totalFare *= 1.3;
         cout << "Your described trip costs CNY " << totalFare << endl;
     }
